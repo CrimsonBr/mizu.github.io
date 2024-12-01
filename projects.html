@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage </title>
+
+    <!-- Link to CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="projectsbg">
+    <header>
+        <nav class="main-nav">
+         <!-- Left side (logo/text) -->
+             <div class="left-nav">
+                <a class="Left-Header" href="index.html" id="homebtn"><i class="fa-solid fa-circle-user"></i></a>
+             </div>
+        <!-- Right side (navigation buttons) -->
+            <div class="right-nav">
+                <ul class="nav">
+                    <li><a class="nav-button" href="about.html">About Me</a></li>
+                    <li><a class="nav-button" href="projects.html">Projects</a></li>
+                    <li><a class="nav-button" id="contact-number" href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <main id="projectbody">
+        <main>
+            <div id="projectc1">
+                <h1>EXPERIENCE</h1>
+                <img src="Photography.jpg" alt="Project" id="project1">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus expedita, corporis ab architecto magni, debitis a voluptate officia incidunt aperiam odio maxime, sint minima doloremque tempore suscipit eveniet corrupti dicta.</p>
+            </div>
+
+        <div id="projectc2">
+            <h1>EXPERIENCE</h1>
+            <img src="Layout.jpg" alt="Project" id="project2">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus expedita, corporis ab architecto magni, debitis a voluptate officia incidunt aperiam odio maxime, sint minima doloremque tempore suscipit eveniet corrupti dicta.</p>
+        </div>
+
+        <div id="projectc3">
+            <h1>EXPERIENCE</h1>
+            <img src="Graphic.png" alt="Project" id="project3">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus expedita, corporis ab architecto magni, debitis a voluptate officia incidunt aperiam odio maxime, sint minima doloremque tempore suscipit eveniet corrupti dicta.</p>
+        </div>
+        </main>
+    </main> -->
+    <main id="projectch">
+        <div id="projecthead">
+            <h1 class="mainp">Past Projects</h1>
+            <p>Here are some projects I've completed during my Senior High School days.</p>
+        </div>
+    </main>
+    
+    <section class="projectmain">
+        <div class="project-card" id="pc1">
+            <h2 class="mainp">LAYOUT DESIGN</h2>
+            <img src="Layout.jpg" alt="Layout Project" class="project-image" id="project1">
+            <p>A layout design i did for the intramurals which sadly was not picked.</p>
+        </div>
+        
+        <div class="project-card" id="pc2">
+            <h2 class="mainp">PHOTOGRAPHY</h2>
+            <img src="Photography.jpg" alt="Photography Project" class="project-image" id="project2">
+            <p>A photograph of my classmate when i was a Senior Highschool Student which i took when were doing our production at Tigaon.</p>
+        </div>
+        
+        <div class="project-card" id="pc3">
+            <h2 class="mainp">GRAPHICS DESIGN</h2>
+            <img src="Graphic.png" alt="Graphic Design Project" id="project3">
+            <p>Just a little mini project i did for fun which i used when i was interviewed at Talingkas.</p>
+        </div>
+    </section>
+
+     <script>
+        // JavaScript for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a.nav-button, a.Left-Header');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default anchor behavior
+                    const targetUrl = this.getAttribute('href'); // Get the target URL
+                    document.body.classList.add('fade-out'); // Add fade-out class
+    
+                    // Wait for the fade-out transition to complete
+                    setTimeout(() => {
+                        window.location.href = targetUrl; // Redirect to the new page
+                    }, 500); // Match this duration with your CSS transition duration
+                });
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/c60e42494f.js" crossorigin="anonymous"></script>
+</body>
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <!-- Link to CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrows_more_up" />
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="homebg">
+    <header>
+        <nav class="main-nav">
+         <!-- Left side (logo/text) -->
+             <div class="left-nav">
+                <a class="Left-Header" href="index.html" id="homebtn"><i class="fa-solid fa-circle-user"></i></a>
+             </div>
+        <!-- Right side (navigation buttons) -->
+            <div class="right-nav">
+                <ul class="nav">
+                    <li><a class="nav-button" href="about.html">About Me</a></li>
+                    <li><a class="nav-button" href="projects.html">Projects</a></li>
+                    <li><a class="nav-button" id="contact-number" href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+     <main class="mainbar">
+        <div id="about-container">
+            <h2 id="mainintro">Im Neil Monserate</h2>
+            <h1 id="mainjob">A Web Developer + Graphics Designer</h1>
+        </div>
+         <div id="image-container">
+            <img src="Me.jpg" alt="Ako" id="image-main">
+         </div>
+         <div id="leftm-container">
+            <a id="arrowbtn" href="projects.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <h1>PROJECTS</h1>
+            <img src="Photography.jpg" alt="Project" id="leftimg">
+            <img src="Layout.jpg" alt="Project" id="leftimg1">
+            <img src="Graphic.png" alt="Project" id="leftimg2">
+         </div>
+     </main>
+
+     <main class="lowerbar">
+        <div id="low-about-container">
+            <a id="infobtn" href="about.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <h2>Neil Monserate. a student currently at Partido State University. An aspiring graphics designer in the future with a passion for all things art.</h2>
+            <h1>About Me.</h1>
+        </div>
+        <div id="low2-container">
+            <a id="phonebtn" href="about.html" id="low2btn"><i class="fa-solid fa-phone"></i></i></a>
+            <h2>Got questions?, im all ears!!</h2>
+           <h1>Contact Me.</h1>
+        </div>
+        <div id="social-main">
+            <a class="Web" href="about.html"><i class="fa-brands fa-square-facebook"></i></a>
+            <a class="Web" href="skills.html"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a class="Web" href="projects.html"><i class="fa-brands fa-instagram"></i></a>
+            <a class="Web" href="contact.html"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </main>
+
+    <script>
+        // JavaScript for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a.nav-button, a.Left-Header');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default anchor behavior
+                    const targetUrl = this.getAttribute('href'); // Get the target URL
+                    document.body.classList.add('fade-out'); // Add fade-out class
+    
+                    // Wait for the fade-out transition to complete
+                    setTimeout(() => {
+                        window.location.href = targetUrl; // Redirect to the new page
+                    }, 500); // Match this duration with your CSS transition duration
+                });
+            });
+        });
+    </script>
+
+<script src="https://kit.fontawesome.com/c60e42494f.js" crossorigin="anonymous"></script>
+ </body>
+

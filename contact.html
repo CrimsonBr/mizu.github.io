@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage </title>
+
+    <!-- Link to CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="contactbg">
+    <header>
+        <nav class="main-nav">
+         <!-- Left side (logo/text) -->
+             <div class="left-nav">
+                <a class="Left-Header" href="index.html" id="homebtn"><i class="fa-solid fa-circle-user"></i></a>
+             </div>
+        <!-- Right side (navigation buttons) -->
+            <div class="right-nav">
+                <ul class="nav">
+                    <li><a class="nav-button" href="about.html">About Me</a></li>
+                    <li><a class="nav-button" href="projects.html">Projects</a></li>
+                    <li><a class="nav-button" id="contact-number" href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contactmain">
+        <div id="contact-container">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or would like to get in touch, please fill out the form below:</p>
+
+            <form id="contact-form" action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+     </main>
+     
+    <script>
+        // JavaScript for page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a.nav-button, a.Left-Header');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default anchor behavior
+                    const targetUrl = this.getAttribute('href'); // Get the target URL
+                    document.body.classList.add('fade-out'); // Add fade-out class
+    
+                    // Wait for the fade-out transition to complete
+                    setTimeout(() => {
+                        window.location.href = targetUrl; // Redirect to the new page
+                    }, 500); // Match this duration with your CSS transition duration
+                });
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/c60e42494f.js" crossorigin="anonymous"></script>
+</body>
